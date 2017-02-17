@@ -10,6 +10,7 @@ Use _config.py_ in order to set up the endpoint where statuses will be reported 
 _python light-sensor.py_
 
 ## Setting up as a system service
+We used _systemd_ in order to manage our system service. In order to set it up:
 * Copy Python scripts to _/opt/light-sensor_. The directory should contain three scripts (_bh1750.py_, _light-sensor.py_ and _config.py_)
 * Create a _/lib/systemd/system/light-sensor.service_ file with the following content:
 ```
