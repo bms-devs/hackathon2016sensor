@@ -73,12 +73,12 @@ def determine_state():
 
 
 def main():
-    global endpoint_url, sensitivity, refresh_rate, measurement_frequency
+    global endpoint_url, sensitivity, refresh_rate, measurement_frequency, smbus_no
 
     logging.basicConfig(filename='light-sensor.log',level=logging.WARNING)
 
     #bus = smbus.SMBus(0) # Rev 1 Pi uses 0
-    bus = smbus.SMBus(1)  # Rev 2 Pi uses 1
+    bus = smbus.SMBus(smbus_no)  # Rev 2 Pi uses 1
     sensor = BH1750(bus)
     sensor.set_sensitivity(sensitivity)
 
